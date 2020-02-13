@@ -4,11 +4,13 @@ function Exo3 () {
     const [name, setName] = useState("inconnu")
     let insertInput=()=>{
         let input = document.getElementById('input');
-        setName(input.value);
-        input.value = "";
+        if (input.value !== "") {
+            setName(input.value);
+            input.value = "";
+        }
     }
     return(
-        <div id="partie3" className="text-left px-5 my-5 py-5">
+        <div id="partie3" className="text-left px-5 py-5">
             <h2>Welcome <span id="span">{name}</span></h2>
             <p>Ecrivez dans l'input le nom de la personne que vous voulez acceuillir.</p>
             <p>Lorsque vous cliquez sur le boutton "go", le nom que vous avez mis dans 
