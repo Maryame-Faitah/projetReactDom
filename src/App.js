@@ -8,7 +8,6 @@ import {
 import Exo1 from './exo1.jsx';
 import './exo1.css';
 import Exo2 from './exo2.jsx';
-import './exo2.css';
 import Exo3 from './exo3.jsx';
 import Exo4 from './exo4.jsx';
 import Exo5 from './exo5.jsx';
