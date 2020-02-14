@@ -27,10 +27,7 @@ function Exo5() {
         divImg.innerHTML = "";
         setCompt(0);
     }
-    //Bouton compteur
-    // let compteur = () => {
-    //     setCompt(compt + 1);
-    // }
+    
     return (
         <div id="partie5" className="text-left px-5 py-5 w-100">
             <h2>Générer des éléments du DOM</h2>

@@ -8,7 +8,7 @@ let Exo1 = () => {
         title.classList.add('bg-info');
     }
     return (
-        <div id="partie1" className="text-left mx-5 mt-5">
+        <div id="partie1" className="text-left pb-5 mx-5 mt-5">
             <h2 id="title" onClick={()=>modificationExo1()} className="bg-secondary text-white ">
                 Mon titre normal
             </h2>

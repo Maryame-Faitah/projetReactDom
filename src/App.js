@@ -13,6 +13,7 @@ import Exo4 from './exo4.jsx';
 import './exo4.css';
 import Exo5 from './exo5.jsx';
 import Exo6 from './exo6.jsx';
+import './exo6.css';
 import Exo7 from './exo7.jsx';
 import './App.css';
 import './../node_modules/bootstrap/dist/css/bootstrap.css';

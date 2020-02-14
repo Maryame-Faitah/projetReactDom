@@ -1,0 +1,19 @@
+
+#contourCalc{
+    background-color: black; 
+    width:27%;
+}
+#btnPlus,#btnMoins,#btnFois,#btnDiv,#btnZero{
+    background-color: rgb(0, 102, 255);
+}
+#btnEgal{
+    background-color: green;
+}
+#btnC{
+    background-color: rgb(236, 134, 151);
+}
+#result{ 
+    background-color: black;
+    color: white; 
+    margin-left: 8%;
+} 
