@@ -23,7 +23,7 @@ function App() {
       <Router>
         <div>
           <div className="bg-light">
-            <p className="titre p-2 text-center">Javascript DOM</p>
+            <p className="titre p-2 text-center">Reactjs</p>
           </div>
           <nav>
             <ul className="nav nav-pills justify-content-center">
