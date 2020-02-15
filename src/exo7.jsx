@@ -1,9 +1,26 @@
 import React from 'react';
 
 function Exo7 () {
+
+
     return(
         <div id="partie7" className="text-left px-5 mb-5 py-5">
-            <h1>Hola</h1>
+            <h2>To do list</h2>
+            <hr/>
+            <input id="tache" className="w-100" type="text" placeholder="Que dois-je faire?"
+            onKeyUp={(event)=>{
+                if (event.keyCode === 13) {
+                    ajoutTache();
+                }
+            }}/>
+            <div id="divTodo" className="row mt-2">
+                <button id="btnAll" className="btn text-white bg-primary rounded mr-2 ml-3">Toutes</button>
+                <button id="btnDone" className="btn text-white bg-transparent text-primary rounded mr-2">Completées</button>
+                <button id="btnTodo" className="btn text-white bg-transparent text-primary rounded">A faire</button>
+            </div>
+            <div id="output" className="mt-5">
+            </div>
+            <hr/>
         </div>
     )
 }
