@@ -11,6 +11,15 @@ function Exo7() {
             par.innerHTML = tache.value;
             output.appendChild(par);
             tache.value = "";
+            //Ajout btn supp tâche
+            let suppTache = document.createElement('button');
+            suppTache.innerHTML = "x";
+            suppTache.classList = "btn ml-3 text-primary bg-light rounded";
+            par.appendChild(suppTache);
+            //Supp tâche
+            suppTache.addEventListener("click", () => {
+                par.remove();
+            });
         }
 
     }
