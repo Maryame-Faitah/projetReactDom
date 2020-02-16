@@ -7,37 +7,48 @@ function Exo7() {
         let tache = document.getElementById('tache');
         let output = document.getElementById('output');
 
-        // let all = document.getElementById('btnAll');
-        // let done = document.getElementById('btnDone');
-        // let todo = document.getElementById('btnTodo');
+        let all = document.getElementById('btnAll');
+        let done = document.getElementById('btnDone');
+        let todo = document.getElementById('btnTodo');
 
-        // let array1 = [];
-        // let array2 = [];
+        let arrayToDoList = [];
 
         if (tache.value !== "") {
-
             //Ajout tâche
             let par = document.createElement('p');
-            par.innerHTML = tache.value;
+            par.innerHTML = tache.value; 
             output.appendChild(par);
             tache.value = "";
             //Ajout checkbox
             let btnCheck = document.createElement('input');
             btnCheck.type = "checkbox";
-            output.appendChild(btnCheck);
             //Ajout div
-            let line = document.createElement('div');
-            line.classList.add('d-flex');
-            // line.classList.add('justify-content-between');
-            line.classList.add('todo');
-            output.appendChild(line);
-            output.appendChild(btnCheck);
-            line.appendChild(par);
+            let div = document.createElement('div');
+            div.classList.add('d-flex');
+            div.classList.add('my-3')
+            div.classList.add('todo');
+            output.appendChild(div);
+            div.appendChild(btnCheck);
+            div.appendChild(par);
+            //Push div dans mon tab
+            arrayToDoList.push(div);
+            //Ajout condition & class à checkbox
+            btnCheck.addEventListener("click", () => {
+                if (btnCheck.checked) {
+                    div.classList.add("bg-primary");
+                    div.classList.remove("todo");
+                    div.classList.add("done");
+                } else {
+                    div.classList.remove("bg-primary");
+                    div.classList.remove("done");
+                    div.classList.add("todo");
+                }
+            });
             //Ajout btn supp tâche
             let suppTache = document.createElement('button');
             suppTache.innerHTML = "Supprimer";
             suppTache.classList = "btn ml-3 text-primary bg-light rounded";
-            line.appendChild(suppTache);
+            div.appendChild(suppTache);
             //Supp tâche
             suppTache.addEventListener("click", () => {
                 par.parentNode.remove();
@@ -47,21 +58,21 @@ function Exo7() {
             let modifTache = document.createElement('button');
             modifTache.innerHTML = "Editer";
             modifTache.classList = "btn ml-3 text-primary bg-light rounded";
-            line.appendChild(modifTache);
+            div.appendChild(modifTache);
             //Modif tâche
             let modifInput = document.createElement('input');
             modifTache.addEventListener("click", () => {
                 modifInput.classList = "ml-3 bg-light"
-                line.replaceChild(modifInput, par);
+                div.replaceChild(modifInput, par);
                 modifInput.defaultValue = par.innerHTML;
-              
+
                 let validInput = document.createElement('button');
                 validInput.innerHTML = "Valider";
                 validInput.classList = "btn ml-3 text-primary bg-light rounded";
-                line.appendChild(validInput);
+                div.appendChild(validInput);
                 validInput.addEventListener("click", () => {
                     if (par.innerHTML = modifInput.value) {
-                        line.replaceChild(par, modifInput);
+                        div.replaceChild(par, modifInput);
                         validInput.remove();
                     }
                 });
@@ -73,7 +84,36 @@ function Exo7() {
             //         line.replaceChild(par, modifInput);
             //     }
             // }
+            //Liste todo
+            todo.addEventListener("click", () => {
+                for (let i = 0; i < arrayToDoList.length; i++) {
+                    if (arrayToDoList[i].classList.contains("todo")) {
+                        arrayToDoList[i].classList.add("d-flex");
+                        arrayToDoList[i].classList.remove("d-none");
+                    } else {
+                        arrayToDoList[i].classList.remove("d-flex");
+                        arrayToDoList[i].classList.add("d-none");
+                    }
 
+                }
+            });
+            done.addEventListener("click", () => {
+                for (let i = 0; i < arrayToDoList.length; i++) {
+                    if (arrayToDoList[i].classList.contains("done")) {
+                        arrayToDoList[i].classList.add("d-flex");
+                        arrayToDoList[i].classList.remove("d-none");
+                    } else {
+                        arrayToDoList[i].classList.remove("d-flex");
+                        arrayToDoList[i].classList.add("d-none");
+                    }
+                }
+            });
+            all.addEventListener("click", () => {
+                for (let i = 0; i < arrayToDoList.length; i++) {
+                    arrayToDoList[i].classList.remove("d-none");
+                    arrayToDoList[i].classList.add("d-flex");
+                }
+            });
         }
     }
 
